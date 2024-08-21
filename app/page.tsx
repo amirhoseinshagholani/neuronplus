@@ -2,9 +2,9 @@
 function Home() {
   return (
     <div className="flex h-screen">
-      <div className="bg-slate-500 w-11/12 h-full mx-auto justify-center mt-10 rounded-2xl bg-[#FFFFC0] shadow-2xl">
-          <div className="bg-[#CC00FF] h-8 rounded-t-2xl flex" dir="ltr">
-            <a href="#" className="bg-[#FFF500] ml-10 my-auto items-center text-xs font-bold p-1 pr-2 pl-2 rounded-lg">ورود-ثبت نام</a>
+      <div className="bg-slate-500 w-11/12 h-full mx-auto justify-center mt-10 rounded-2xl bg-[#ffffc0] shadow-2xl">
+          <div className="bg-[#cc00ff] h-8 rounded-t-2xl flex" dir="ltr">
+            <a href="#" className="bg-[#fff500] ml-10 my-auto items-center text-xs font-bold p-1 pr-2 pl-2 rounded-lg">ورود-ثبت نام</a>
           </div>
           <div className="bg-[#EDA4FF] w-full h-20">
             <div className="flex gap-12 grid-cols-12 w-full mt-0 mx-auto justify-center">
