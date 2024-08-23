@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import localfont from 'next/font/local';
 import "./globals.css";
-
+import "../public/css/font.css";
 
 export const metadata: Metadata = {
-  title: "Neuron +",
+  title: "Neuron+",
   description: "وب سایت آموزشی نورون پلاس-تیزهوشان",
 };
 
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="bg-[#EFEFEF]">{children}</body>
+      <body className='bg-[#EFEFEF]'>{children}</body>
     </html>
   );
 }

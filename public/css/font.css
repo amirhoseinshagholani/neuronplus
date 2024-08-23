@@ -1,0 +1,54 @@
+
+@font-face {
+    font-family: 'diodrum-regular';
+    src: url('../font/DIODRUMARABIC-REGULAR.TTF');
+}
+
+@font-face {
+    font-family: 'diodrum-bold';
+    src: url('../font/DIODRUMARABIC-BOLD.TTF');
+}
+
+@font-face {
+    font-family: 'diodrum-extralight';
+    src: url('../font/DIODRUMARABIC-EXTRALIGHT.TTF');
+}
+
+@font-face {
+    font-family: 'diodrum-light';
+    src: url('../font/DIODRUMARABIC-LIGHT.TTF');
+}
+
+@font-face {
+    font-family: 'diodrum-medium';
+    src: url('../font/DIODRUMARABIC-MEDIUM.TTF');
+}
+
+@font-face {
+    font-family: 'diodrum-semibold';
+    src: url('../font/DIODRUMARABIC-SEMIBOLD.TTF');
+}
+
+.diodfont-regular{
+    font-family: 'diodrum-regular';
+}
+
+.diodfont-bold{
+    font-family: 'diodrum-bold';
+}
+
+.diodfont-extralight{
+    font-family: 'diodrum-extralight';
+}
+
+.diodfont-light{
+    font-family: 'diodrum-light';
+}
+
+.diodfont-medium{
+    font-family: 'diodrum-medium';
+}
+
+.diodfont-semibold{
+    font-family: 'diodrum-semibold';
+}
