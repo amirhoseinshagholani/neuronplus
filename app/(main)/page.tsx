@@ -127,9 +127,9 @@ function Home() {
           <div className="p-10 pr-20 text-xl diodfont-bold text-[#cc00ff]">
             نظرات نورونی ها
           </div>
-          <div>
+          {/* <div>
             <EmblaCarousel />
-          </div>
+          </div> */}
         </div>
       </main>
 
