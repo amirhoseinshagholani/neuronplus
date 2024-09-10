@@ -1,18 +1,18 @@
 const Header = () => {
   return (
     <>
-      <div className="bg-[#cc00ff] h-8 rounded-t-2xl flex" dir="ltr">
-        <div className="bg-[#fff500] diodfont-regular shadow-lg ml-10 my-auto items-center pb-2 text-xs font-bold p-1 pr-2 pl-2 rounded-lg">
+      <div className="bg-[#cc00ff]  h-8 rounded-t-2xl flex" dir="ltr">
+        <div className="bg-[#fff500] diodfont-regular shadow-lg ml-10 my-auto items-center pb-2 text-xs font-bold pr-2 pl-2 rounded-lg">
           <a href="#" className="">
             ورود-ثبت نام
           </a>
         </div>
       </div>
-      <header className="bg-[#EDA4FF] w-full h-20 shadow-lg diodfont-semibold">
+      <header className="bg-[#D6A3E4]  w-full h-20 shadow-lg diodfont-semibold ">
         <nav className="flex gap-12 grid-cols-12 w-full mt-0 mx-auto justify-center">
           <div className="col-span-4 flex gap-20 p-6 pr-20">
             <div>
-              <a href="#">صفحه اصلی</a>
+              <a href="/">صفحه اصلی</a>
             </div>
             <div>
               <a href="#">دوره ها</a>

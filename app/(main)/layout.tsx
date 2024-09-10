@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localfont from "next/font/local";
 import "../globals.css";
 import "@/public/css/font.css";
+import "@/public/css/style.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
 
@@ -17,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="bg-[#EFEFEF]">
+      <body className="bg-[#424242] ">
         <div className="">
           <div className="w-11/12 h-full mx-auto justify-center mt-10 rounded-2xl bg-[#efefed] shadow-2xl">
             <Header />

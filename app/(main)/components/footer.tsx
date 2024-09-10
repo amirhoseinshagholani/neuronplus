@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#cc00ff] h-40 w-full mt-20 rounded-b-2xl pt-3 pr-3 pl-3 diodfont-light">
+      <footer className="bg-[#cc00ff] h-40 w-full rounded-b-2xl pt-3 pr-3 pl-3 diodfont-light">
         <div className="flex gap-52">
           <div className="text-white">
             <div className="text-sm mb-1">فهرست</div>
