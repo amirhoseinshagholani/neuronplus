@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl">
       <body className="bg-[#424242] ">
         <div className="">
-          <div className="w-11/12 h-full mx-auto justify-center mt-10 rounded-2xl bg-[#efefed] shadow-2xl">
+          <div className="w-11/12 h-full mx-auto justify-center mt-10 rounded-2xl bg-[#efefed] main-back-img shadow-2xl">
             <Header />
             {children}
             <Footer />

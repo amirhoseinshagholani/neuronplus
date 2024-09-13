@@ -1,12 +1,11 @@
 import BrainSvg from "@/public/svg/components/brainSvg";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import EmblaCarousel from "./components/home/emblaCarousel";
-
 
 function Home() {
   return (
     <>
-      <main className="h-full main-back-img">
+      <main className="h-full">
         <div className="grid grid-cols-12 ">
           <div className="col-span-7 h-10 p-10 font-semiboldbold">
             <div className="mr-10 mt-5 font-bold">
@@ -42,16 +41,20 @@ function Home() {
         </div>
 
         <div>
-          <div className="p-10 pr-20 text-xl diodfont-bold text-[#cc00ff]">
-            پایه چندمی؟
+          <div className="p-10">
+            <div className="pr-20 text-xl diodfont-bold text-[#cc00ff]">
+              پایه چندمی؟
+            </div>
+            <div className="mt-2 pr-20 text-[#557ac4] text-md diodfont-semibold">
+              یکی از پایه های زیر رو انتخاب کن تا بترکونیم
+            </div>
           </div>
 
           <div className="flex mt-5">
             <div className="mx-auto">
               <div className="grid grid-cols-12 gap-20">
-
                 <div className="col-span-4 h-44 w-44  rounded-xl shadow-2xl mx-auto">
-                  <a href="/pages/base/2">
+                  <a href="/base/2">
                     <img
                       className="rounded rounded-xl"
                       src="/img/4th.jpg"
@@ -69,7 +72,7 @@ function Home() {
                     />
                   </a>
                 </div>
-                
+
                 <div className="col-span-4 h-44 w-44 rounded-xl shadow-2xl mx-auto">
                   <a href="/pages/base/4">
                     <img
@@ -79,7 +82,6 @@ function Home() {
                     />
                   </a>
                 </div>
-
               </div>
             </div>
           </div>
@@ -137,8 +139,6 @@ function Home() {
           </div> */}
         </div>
       </main>
-
-
     </>
   );
 }

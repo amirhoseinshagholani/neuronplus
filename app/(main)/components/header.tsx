@@ -1,21 +1,36 @@
+"use client";
+
+import { useState } from "react";
+
 const Header = () => {
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+
   return (
     <>
       <div className="bg-[#cc00ff]  h-8 rounded-t-2xl flex" dir="ltr">
         <div className="bg-[#fff500] diodfont-regular shadow-lg ml-10 my-auto items-center pb-2 text-xs font-bold pr-2 pl-2 rounded-lg">
-          <a href="#" className="">
+          <a href="#" className="text-slate-700">
             ورود-ثبت نام
           </a>
         </div>
       </div>
-      <header className="bg-[#D6A3E4]  w-full h-20 shadow-lg diodfont-semibold ">
+      <header className="bg-[#D6A3E4]  w-full h-20 shadow-lg diodfont-semibold text-lg text-slate-700">
         <nav className="flex gap-12 grid-cols-12 w-full mt-0 mx-auto justify-center">
           <div className="col-span-4 flex gap-20 p-6 pr-20">
             <div>
               <a href="/">صفحه اصلی</a>
             </div>
-            <div>
+            <div onMouseOver={() => setIsOpenMenu(true)} onMouseLeave={() => setIsOpenMenu(false)}>
               <a href="#">دوره ها</a>
+              <div className="absolute">
+                {isOpenMenu && (
+                  <ul className="diodfont-semibold text-xs pt-1 pb-2 pl-2 pr-2 mt-2 bg-slate-300 min-w-24 rounded-md shadow-yellow-300 shadow-md">
+                    <li className="p-1 pb-2 hover:bg-slate-200 rounded-md"><a href="/base/2">پایه چهارم</a></li>
+                    <li className="p-1 pb-2 hover:bg-slate-200 rounded-md"><a href="#">پایه پنجم</a></li>
+                    <li className="p-1 pb-2 hover:bg-slate-200 rounded-md"><a href="#">پایه ششم</a></li>
+                  </ul>
+                )}
+              </div>
             </div>
             <div>
               <a href="#">گالری عکس</a>
@@ -23,7 +38,7 @@ const Header = () => {
           </div>
           <div className="col-span-4 my-auto mt-0 mx-auto justify-center pt-1">
             <a href="/">
-              <img src="/img/neuron+.png" className="w-20" alt="" />
+              <img src="/img/logo.png" className="w-20" alt="" />
             </a>
           </div>
           <div className="col-span-4 flex gap-20 p-6 pl-20">
