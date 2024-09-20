@@ -1,4 +1,4 @@
-import Check from "@/public/svg/components/check";
+import Check from "@/public/svg/components/true";
 import LockSvg from "@/public/svg/components/lockSvg";
 import PlayVideo from "@/public/svg/components/playVideoBlack";
 
@@ -9,10 +9,17 @@ const Package = () => {
         <div className="grid grid-cols-12 ">
           <div className="col-span-7">
             <div className="p-10">
-              <div>
-                <p className="text-3xl diodfont-bold text-slate-700">
-                  پکیج طلایی چهارم
-                </p>
+              <div className="flex justify-between">
+                <div>
+                  <p className="text-3xl diodfont-bold text-slate-700">
+                    پکیج طلایی چهارم
+                  </p>
+                </div>
+                <a href="#">
+                <div className="flex gap-1 pr-5 diodfont-semibold p-6 text-white rounded-xl pt-2 pb-4 bg-gradient-to-r from-blue-500 to-blue-800 hover:from-blue-600 hover:to-blue-900">
+                  <span className="mt-1"><Check/></span><span>ثبت نام</span>
+                </div>
+                </a>
               </div>
               <div>
                 <p className="mt-4 text-[#557ac4] text-md diodfont-semibold">
@@ -65,38 +72,38 @@ const Package = () => {
               </span>
             </div>
             <div className="mt-5">
-              <a href="/package/1/teaching/2">
+              
                 <div className="bg-purple-300 mt-3 flex justify-between shadow-purple-700  p-3 pb-4 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
                   <span className="w-60">مقدمه</span>
                   <span className="mr-auto">
                     <Check />
                   </span>
                 </div>
-              </a>
-              <a href="/package/1/teaching/2">
+              
+              
                 <div className="bg-purple-300 flex justify-between mt-3 shadow-purple-700  p-3 pb-4 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
                   <span className="w-60">قسمت اول - معادلات درجه 1</span>
                   <span className="mr-auto">
                     <Check />
                   </span>
                 </div>
-              </a>
-              <a href="/package/1/teaching/2">
+              
+              
                 <div className="bg-purple-300 flex justify-between mt-3 shadow-purple-700  p-3 pb-4 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
                   <span className="w-60">قسمت دوم - معادلات درجه 2</span>
                   <span className="mr-auto">
                     <Check />
                   </span>
                 </div>
-              </a>
-              <a href="/package/1/teaching/2">
+              
+              
                 <div className="bg-purple-300 flex justify-between mt-3 shadow-purple-700  p-3 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
                   <span className="w-60">قسمت سوم - حد و پیوستگی</span>
                   <span className="mr-auto justify-center">
                     <Check />
                   </span>
                 </div>
-              </a>
+              
             </div>
           </div>
 
@@ -110,30 +117,36 @@ const Package = () => {
               </span>
             </div>
             <div className="mt-5">
-              <div className="bg-red-300 mt-3 flex justify-between shadow-purple-700  p-3 pb-4 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
-                <span className="w-60">قسمت اول - معادلات درجه 1</span>
-                <span className="mr-auto">
-                  <Check />
-                </span>
-              </div>
-              <div className="bg-red-300 mt-3 flex justify-between shadow-purple-700  p-3 pb-4 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
-                <span className="w-60">قسمت دوم - معادلات درجه 2</span>
-                <span className="mr-auto">
-                  <Check />
-                </span>
-              </div>
-              <div className="bg-red-300 mt-3 flex justify-between shadow-purple-700  p-3 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
-                <span className="w-60">قسمت سوم - حد و پیوستگی</span>
-                <span className="mr-auto">
-                  <Check />
-                </span>
-              </div>
-              <div className="bg-red-300 mt-3 flex justify-between shadow-purple-700  p-3 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
-                <span className="w-60">قسمت چهارم - مشتق و انتگرال</span>
-                <span className="mr-auto">
-                  <Check />
-                </span>
-              </div>
+              
+                <div className="bg-red-300 mt-3 flex justify-between shadow-purple-700  p-3 pb-4 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
+                  <span className="w-60">قسمت اول - معادلات درجه 1</span>
+                  <span className="mr-auto">
+                    <Check />
+                  </span>
+                </div>
+              
+              
+                <div className="bg-red-300 mt-3 flex justify-between shadow-purple-700  p-3 pb-4 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
+                  <span className="w-60">قسمت دوم - معادلات درجه 2</span>
+                  <span className="mr-auto">
+                    <Check />
+                  </span>
+                </div>
+
+                <div className="bg-red-300 mt-3 flex justify-between shadow-purple-700  p-3 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
+                  <span className="w-60">قسمت سوم - حد و پیوستگی</span>
+                  <span className="mr-auto">
+                    <Check />
+                  </span>
+                </div>
+
+                <div className="bg-red-300 mt-3 flex justify-between shadow-purple-700  p-3 shadow-sm rounded-xl text-sm diodfont-medium text-xs">
+                  <span className="w-60">قسمت چهارم - مشتق و انتگرال</span>
+                  <span className="mr-auto">
+                    <Check />
+                  </span>
+                </div>
+              
             </div>
           </div>
           <div className="col-span-6 h-60"></div>

@@ -16,9 +16,11 @@ const RootLayout = ({children}:any) => {
           Nueron+ Admin-panel
         </title>
       </head>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col">
         <Header/>
-        <Main children={children} />
+        <div className="p-10 pr-0 pl-0 pb-0 h-screen">
+          <Main children={children} />
+        </div>
         <Footer/>
       </body>
     </html>

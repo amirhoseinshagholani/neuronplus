@@ -1,4 +1,4 @@
-const Check = () => {
+const TrueSvg = () => {
   return (
     <>
       <svg
@@ -20,4 +20,4 @@ const Check = () => {
   );
 };
 
-export default Check;
+export default TrueSvg;

@@ -11,7 +11,7 @@ const BaseCourse = ({ params }: { params: { slug: string } }) => {
                 </p>
               </div>
               <div>
-                <p className="mt-4 text-[#557ac4] text-md diodfont-semibold">
+                <p className="mt-4 text-[#557ac4]  text-md diodfont-semibold">
                   شامل آموزش جامع مقطع چهارم به همراه آزمون و نمونه سوال
                 </p>
               </div>

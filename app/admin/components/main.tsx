@@ -1,11 +1,13 @@
 import Sidebar from "./sidebar";
 
 const Main = ({children}:any) => {
+  
+  
   return (
     <>
-      <div className="flex-grow max-h-screen grid grid-cols-12 bg-purple-100">
+      <div className="h-full grid grid-cols-12 bg-gray-300 overflow-hidden">
         <Sidebar />
-        <div className="col-span-10 mx-auto w-11/12">
+        <div className="col-span-10 mx-auto w-11/12  flex h-[85%]">
         {children}
         </div>
       </div>
