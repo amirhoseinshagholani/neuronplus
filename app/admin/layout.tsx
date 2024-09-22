@@ -18,9 +18,12 @@ const RootLayout = ({children}:any) => {
       </head>
       <body className="flex flex-col">
         <Header/>
-        <div className="p-10 pr-0 pl-0 pb-0 h-screen">
-          <Main children={children} />
-        </div>
+          <div className="p-10 pr-0 pl-0 pb-0 h-screen">
+            <div className="h-full grid grid-cols-12 bg-gray-300 overflow-hidden">
+              <Sidebar />
+              <Main>{children}</Main>
+            </div>
+          </div>
         <Footer/>
       </body>
     </html>

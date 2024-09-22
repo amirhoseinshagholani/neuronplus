@@ -48,7 +48,7 @@ const Header = () => {
               </div>
             </div>
             <div>
-              <a href="#">گالری عکس</a>
+              <a href="events">رویدادها</a>
             </div>
           </div>
           <div className="col-span-4 my-auto mt-0 mx-auto justify-center pt-1">

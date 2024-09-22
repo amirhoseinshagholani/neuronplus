@@ -1,6 +1,7 @@
 import BrainSvg from "@/public/svg/components/brainSvg";
 import dynamic from "next/dynamic";
 import EmblaCarousel from "./components/home/emblaCarousel";
+import Slider from "./components/home/slider";
 
 function Home() {
   return (
@@ -133,6 +134,24 @@ function Home() {
         <div>
           <div className="p-10 pr-20 text-xl diodfont-bold text-[#cc00ff]">
             نظرات نورونی ها
+          </div>
+
+          <div className="slider-container">
+            <div className="slide">
+              <img src="/img/image1.jpg" />
+            </div>
+            <div className="slide">
+              <img src="/img/image2.jpg" />
+            </div>
+            <div className="slide">
+              <img src="/img/image3.jpg" />
+            </div>
+            {/* <button className="prev" onclick="changeSlide(-1)">
+              &#10094;
+            </button>
+            <button className="next" onclick="changeSlide(1)">
+              &#10095;
+            </button> */}
           </div>
           {/* <div>
             <EmblaCarousel />
