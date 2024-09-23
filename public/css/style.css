@@ -4,3 +4,54 @@
     background-size: 100%;
 }
 
+
+.slider-container {
+    width: 500px;
+    height: 500px; /* ارتفاع کل اسلایدر */
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    opacity: 0;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    transition: opacity 1s ease-in-out;
+}
+
+.img-slides {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.active {
+    opacity: 1;
+    position: relative; /* برای اطمینان از اینکه تصویر در زمان نمایش در جای درست قرار بگیرد */
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(128, 128, 128, 0.7); /* طوسی با شفافیت */
+    border: none;
+    cursor: pointer;
+    width: 50px; /* عرض دکمه */
+    height: 50px; /* ارتفاع دکمه */
+    border-radius: 50%; /* گرد کردن دکمه‌ها */
+    z-index: 10; /* برای اطمینان از اینکه دکمه‌ها بالای تصاویر قرار بگیرند */
+    display: flex; /* برای وسط‌چینی محتوا */
+    align-items: center; /* وسط‌چینی عمودی محتوا */
+    justify-content: center; /* وسط‌چینی افقی محتوا */
+    font-size: 18px; /* اندازه متن */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}

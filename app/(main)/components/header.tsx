@@ -58,7 +58,7 @@ const Header = () => {
           </div>
           <div className="col-span-4 flex gap-20 p-6 pl-20">
             <div>
-              <a href="#">مشاوره رایگان</a>
+              <a href="/counseling">مشاوره رایگان</a>
             </div>
             <div>
               <a href="#">درباره ما</a>

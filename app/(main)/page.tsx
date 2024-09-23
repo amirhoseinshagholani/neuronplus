@@ -1,21 +1,24 @@
 import BrainSvg from "@/public/svg/components/brainSvg";
 import dynamic from "next/dynamic";
 import EmblaCarousel from "./components/home/emblaCarousel";
-import Slider from "./components/home/slider";
+import Slider from "./components/imageSlider";
+import ImageSlider from "./components/imageSlider";
+import SearchSvg from "@/public/svg/components/searchSvg";
 
 function Home() {
+  
   return (
     <>
       <main className="h-full">
         <div className="grid grid-cols-12 ">
-          <div className="col-span-7 h-10 p-10 font-semiboldbold">
+          <div className="col-span-7 p-10 font-semiboldbold">
             <div className="mr-10 mt-5 font-bold">
               <div className="text-3xl diodfont-bold text-[#2d2c2c]">
                 نورون پلاس
               </div>
               <div className="flex gap-2 mt-3">
                 <div className="w-7 mt-2">
-                  <img src="/svg/talent-search-svgrepo-com.svg" alt="" />
+                  <SearchSvg/>
                 </div>
                 <div className="mt-2 text-[#557ac4] text-md diodfont-semibold">
                   اینجا استعدادت رو کشف میکنی
@@ -135,27 +138,17 @@ function Home() {
           <div className="p-10 pr-20 text-xl diodfont-bold text-[#cc00ff]">
             نظرات نورونی ها
           </div>
-
-          <div className="slider-container">
-            <div className="slide">
-              <img src="/img/image1.jpg" />
+          <div className="h-full">
+        <div className="">
+          <div className="p-10 font-semiboldbold flex justify-center">
+            <div className="w-3/5 shadow-xl rounded-xl">
+              <ImageSlider />
             </div>
-            <div className="slide">
-              <img src="/img/image2.jpg" />
-            </div>
-            <div className="slide">
-              <img src="/img/image3.jpg" />
-            </div>
-            {/* <button className="prev" onclick="changeSlide(-1)">
-              &#10094;
-            </button>
-            <button className="next" onclick="changeSlide(1)">
-              &#10095;
-            </button> */}
           </div>
-          {/* <div>
-            <EmblaCarousel />
-          </div> */}
+          {/* سایر محتواها */}
+        </div>
+      </div>
+          
         </div>
       </main>
     </>

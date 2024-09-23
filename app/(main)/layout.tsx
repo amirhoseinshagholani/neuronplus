@@ -3,6 +3,7 @@ import localfont from "next/font/local";
 import "../globals.css";
 import "@/public/css/font.css";
 import "@/public/css/style.css";
+import "@/public/js/slide";
 import Header from "./components/header";
 import Footer from "./components/footer";
 

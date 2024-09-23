@@ -44,7 +44,7 @@ const Events = () => {
 
           <div className="">
             <div className="h-20  m-10 mt-2 border-t-2 border-b-2 border-red-300 bg-gray-300">
-              <div className="pr-10 pl-10 pt-1">
+              <div className="pr-10 pl-10 pt-2">
                 <div className="flex justify-between">
                   <div className="text-xs diodfont-bold text-blue-600">
                     <a href="#">پکیج نقره ای، پایه چهارم دبستان منتشر شد!</a>
@@ -67,7 +67,7 @@ const Events = () => {
             </div>
 
             <div className="h-20  m-10 mt-2 border-t-2 border-b-2 border-red-300 bg-gray-300">
-              <div className="pr-10 pl-10 pt-1">
+              <div className="pr-10 pl-10 pt-2">
                 <div className="flex justify-between">
                   <div className="text-xs diodfont-bold text-blue-600">
                     <a href="#">پکیج نقره ای، پایه چهارم دبستان منتشر شد!</a>
@@ -90,7 +90,7 @@ const Events = () => {
             </div>
 
             <div className="h-20  m-10 mt-2 border-t-2 border-b-2 border-red-300 bg-gray-300">
-              <div className="pr-10 pl-10 pt-1">
+              <div className="pr-10 pl-10 pt-2">
                 <div className="flex justify-between">
                   <div className="text-xs diodfont-bold text-blue-600">
                     <a href="#">پکیج نقره ای، پایه چهارم دبستان منتشر شد!</a>
@@ -113,7 +113,7 @@ const Events = () => {
             </div>
 
             <div className="h-20  m-10 mt-2 border-t-2 border-b-2 border-red-300 bg-gray-300">
-              <div className="pr-10 pl-10 pt-1">
+              <div className="pr-10 pl-10 pt-2">
                 <div className="flex justify-between">
                   <div className="text-xs diodfont-bold text-blue-600">
                     <a href="#">پکیج نقره ای، پایه چهارم دبستان منتشر شد!</a>
@@ -136,7 +136,7 @@ const Events = () => {
             </div>
 
             <div className="h-20  m-10 mt-2 border-t-2 border-b-2 border-red-300 bg-gray-300">
-              <div className="pr-10 pl-10 pt-1">
+              <div className="pr-10 pl-10 pt-2">
                 <div className="flex justify-between">
                   <div className="text-xs diodfont-bold text-blue-600">
                     <a href="#">پکیج نقره ای، پایه چهارم دبستان منتشر شد!</a>
