@@ -61,10 +61,10 @@ const Header = () => {
               <a href="/counseling">مشاوره رایگان</a>
             </div>
             <div>
-              <a href="#">درباره ما</a>
+              <a href="/about_us">درباره ما</a>
             </div>
             <div>
-              <a href="#">تماس با ما</a>
+              <a href="/contact_us">تماس با ما</a>
             </div>
           </div>
         </nav>
