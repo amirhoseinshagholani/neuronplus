@@ -3,7 +3,9 @@ import FalseSvg from "@/public/svg/components/false";
 import TrueSvg from "@/public/svg/components/true";
 import LockSvg from "@/public/svg/components/lockSvg";
 import UnlockSvg from "@/public/svg/components/unlockSvg";
-import DownloadSvg from "@/public/svg/components/downloadPdfSvg";
+import DownloadPdfSvg from "@/public/svg/components/downloadPdfSvg";
+import EditSvg from "@/public/svg/components/editSvg";
+import DownloadVideoSvg from "@/public/svg/components/downloadVideo";
 
 const Teaching = () => {
   return (
@@ -128,77 +130,105 @@ const Teaching = () => {
               <div className="w-full p-2">
                 <div className="text-gray-800 p-2 pt-2 text-xs diodfont-semibold bg-gradient-to-r from-purple-300 to-purple-400 shadow-md h-10 w-full mt-2 rounded-lg">
                   <div className="flex justify-between">
-                    <span className="flex-shrink-0 overflow-hidden text-ellipsis w-32 whitespace-nowrap">
+                    <span className="flex-shrink-0 overflow-hidden text-ellipsis w-24 whitespace-nowrap">
                       1- مقدمه
                     </span>
-                    <span className="flex-1 mr-10">20:34</span>
-                    <span className="flex-1">
+                    <span className="flex-1 mr-10">
                       <LockSvg />
                     </span>
                     <span className="flex-1">
                       <a href="#">
-                        <DownloadSvg />
+                        <DownloadPdfSvg />
                       </a>
                     </span>
-                    <span className="flex-2">
+                    <span className="flex-1">
+                      <a href="#">
+                        <DownloadVideoSvg />
+                      </a>
+                    </span>
+                    <span className="flex-1">
                       <TrueSvg />
+                    </span>
+                    <span className="flex-2">
+                      <EditSvg />
                     </span>
                   </div>
                 </div>
                 <div className="text-gray-800 p-2 pt-2 text-xs diodfont-semibold bg-gradient-to-r from-purple-300 to-purple-400 shadow-md h-10 w-full mt-2 rounded-lg">
                   <div className="flex justify-between">
-                    <span className="flex-shrink-0 overflow-hidden text-ellipsis w-32 whitespace-nowrap">
+                    <span className="flex-shrink-0 overflow-hidden text-ellipsis w-24 whitespace-nowrap">
                       2- معادلات درجه 1
                     </span>
-                    <span className="flex-1 mr-10">20:34</span>
-                    <span className="flex-1">
+                    <span className="flex-1 mr-10">
                       <UnlockSvg />
                     </span>
                     <span className="flex-1">
                       <a href="#">
-                        <DownloadSvg />
+                        <DownloadPdfSvg />
                       </a>
                     </span>
-                    <span className="flex-2">
+                    <span className="flex-1">
+                      <a href="#">
+                        <DownloadVideoSvg />
+                      </a>
+                    </span>
+                    <span className="flex-1">
                       <TrueSvg />
+                    </span>
+                    <span className="flex-2">
+                      <EditSvg />
                     </span>
                   </div>
                 </div>
                 <div className="text-gray-800 p-2 pt-2 text-xs diodfont-semibold bg-gradient-to-r from-purple-300 to-purple-400 shadow-md h-10 w-full mt-2 rounded-lg">
                   <div className="flex justify-between">
-                    <span className="flex-shrink-0 overflow-hidden text-ellipsis w-32 whitespace-nowrap">
+                    <span className="flex-shrink-0 overflow-hidden text-ellipsis w-24 whitespace-nowrap">
                       3- معادلات درجه 2
                     </span>
-                    <span className="flex-1 mr-10">20:34</span>
-                    <span className="flex-1">
+                    <span className="flex-1 mr-10">
                       <UnlockSvg />
                     </span>
                     <span className="flex-1">
                       <a href="#">
-                        <DownloadSvg />
+                        <DownloadPdfSvg />
                       </a>
                     </span>
-                    <span className="flex-2">
+                    <span className="flex-1">
+                      <a href="#">
+                        <DownloadVideoSvg />
+                      </a>
+                    </span>
+                    <span className="flex-1">
                       <FalseSvg />
+                    </span>
+                    <span className="flex-2">
+                      <EditSvg />
                     </span>
                   </div>
                 </div>
                 <div className="text-gray-800 p-2 pt-2 text-xs diodfont-semibold bg-gradient-to-r from-purple-300 to-purple-400 shadow-md h-10 w-full mt-2 rounded-lg">
                   <div className="flex justify-between">
-                    <span className="flex-shrink-0 overflow-hidden text-ellipsis w-32 whitespace-nowrap">
+                    <span className="flex-shrink-0 overflow-hidden text-ellipsis w-24 whitespace-nowrap">
                       4- حد و پیوستگی
                     </span>
-                    <span className="flex-1 mr-10">20:34</span>
-                    <span className="flex-1">
+                    <span className="flex-1 mr-10">
                       <UnlockSvg />
                     </span>
                     <span className="flex-1">
                       <a href="#">
-                        <DownloadSvg />
+                        <DownloadPdfSvg />
                       </a>
                     </span>
-                    <span className="flex-2">
+                    <span className="flex-1">
+                      <a href="#">
+                        <DownloadVideoSvg />
+                      </a>
+                    </span>
+                    <span className="flex-1">
                       <TrueSvg />
+                    </span>
+                    <span className="flex-2">
+                      <EditSvg />
                     </span>
                   </div>
                 </div>

@@ -36,7 +36,7 @@ function Home() {
           </div>
           <div className="col-span-5 mt-5">
             <div className="mx-auto justify-center w-fit">
-              <img className="" src="/img/mohad.png" alt="" width={400} />
+              <img className="w-5/6" src="/img/mohad.png" alt="" />
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ const Header = () => {
         <div className="flex ml-10 mt-1 justify-between">
           <div className="text-white mr-2 text-xs diodfont-medium flex gap-2"><span>محدثه عزیز، خوش آمدید</span></div>
           <div className="shadow-md">
-            <a className="bg-[#FFF500] rounded-xl pb-1 pr-6 pl-6 text-sm diodfont-semibold" href="/auth/login">
+            <a className="bg-[#FFF500] rounded-xl pb-1 pr-6 pl-6 text-xs diodfont-semibold" href="/auth/login">
               خروج
             </a>
           </div>

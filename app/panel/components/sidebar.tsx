@@ -18,6 +18,7 @@ import useGetRoute from "../functions/getRouter";
 import RoleSvg from "@/public/svg/components/roleSvg";
 import Link from "next/link";
 import EventSvg from "@/public/svg/components/eventSvg";
+import CheckListSvg from "@/public/svg/components/checklistSvg";
 
 const Sidebar = () => {
   const currentRoute = useGetRoute();
@@ -37,49 +38,31 @@ const Sidebar = () => {
               <hr className="mt-1 w-5/6 mx-auto justify-center mb-3" />
 
               <Link href="/panel">
-                <div className={`${currentRoute=='/admin' ? 'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
+                <div className={`${currentRoute=='/panel' ? 'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
                   <div><ProfileIcon/></div><div><div>پروفایل من</div></div>
                 </div>
               </Link>
 
-              <Link href="/panel/users">
-                <div className={`${currentRoute=='/admin/orders'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
-                  <div><UsersSvg/></div><div><div>سفارشات</div></div>
-                </div>
-              </Link>
-              
               <Link href="/panel/courses">
-                <div className={`${currentRoute=='/admin/courses'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
+                <div className={`${currentRoute=='/panel/courses'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
                    <div><PackageSvg/></div><div><div>دوره ها</div></div>
                 </div>
               </Link>
 
-              {/* <Link href="/panel/teaching">
-                <div className={`${currentRoute=='/admin/teaching'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
-                  <div><PlayVideoBlack/></div><div><div>ویدئوها</div></div>
+              <Link href="/panel/orders">
+                <div className={`${currentRoute=='/panel/orders'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
+                  <div><CheckListSvg/></div><div><div>سفارشات</div></div>
                 </div>
-              </Link> */}
-
-              {/* <Link href="/panel/workSheet">
-                <div className={`${currentRoute=='/admin/workSheet'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
-                  <div><WorkSheetSvg/></div><div><div>کاربرگ ها</div></div>
-                </div>
-              </Link> */}
-
-              {/* <Link href="/panel/onlineQuiz">
-                <div className={`${currentRoute=='/admin/onlineQuiz'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
-                  <div><QuizSvg/></div><div><div>آزمون آنلاین</div></div>
-                </div>
-              </Link> */}
-
+              </Link>
+              
               <Link href="/panel/tickets">
-                <div className={`${currentRoute == '/admin/tickets'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
+                <div className={`${currentRoute == '/panel/tickets'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
                   <div><TicketSvg/></div><div><div>تیکت های من</div></div>
                 </div>
               </Link>
 
               <Link href="/panel/advice">
-                <div className={`${currentRoute=='/admin/advice'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
+                <div className={`${currentRoute=='/panel/advice'?'bg-gradient-to-l from-[#6697C5] to-gray-300':''} flex gap-2 p-4 pt-2 w-full hover:bg-gradient-to-l from-[#6697C5] to-gray-300`}>
                   <div><CounselingSvg/></div><div><div>درخواست مشاوره</div></div>
                 </div>
               </Link>

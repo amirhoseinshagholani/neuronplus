@@ -12,56 +12,45 @@ const HomePage = () => {
                 <div className="diodfont-semibold text-md p-1 pb-2">
                   نام و نام خانوادگی:
                 </div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  آراد حسینی
-                </div>
+                <input type="text" defaultValue={"آراد حسینی"} className="h-9 diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl"/>
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">کدملی:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  4311409338
-                </div>
+                <input type="text" defaultValue={"4311409338"} className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl"/>
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">تلفن ثابت:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  02133665544
-                </div>
+                <input type="text" defaultValue={"02133665544"} className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl"/>
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">موبایل:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  09011813758
-                </div>
+                <input type="text" defaultValue={"09011813758"} className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl"/>
               </div>
             </div>
 
             <div className="w-1/2">
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">استان:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  تهران
-                </div>
+                <input type="text" defaultValue={"تهران"} className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl"/>
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">شهر:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  تهران
-                </div>
+                <input type="text" defaultValue={"تهران"} className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl"/>
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">آدرس:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  نارمک، خیابان رودباری، پلاک370
-                </div>
+                <input type="text" defaultValue={" نارمک، خیابان رودباری، پلاک370"} className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl"/>
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md  p-1 pb-2">
                   تاریخ شروع همکاری:
                 </div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  1403-06-02
-                </div>
+                <input type="text" defaultValue={"1403-06-02"} className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl"/>
+              </div>
+              <div className="flex gap-2 text-sm p-2 justify-end mt-10 ml-5">
+                <button type="submit" className="diodfont-semibold h-10 text-sm text-gray-800 shadow-md bg-gradient-to-r from-green-400 to-green-600 p-1 pl-1 w-1/3 pr-2 pb-2 rounded-lg">
+                  ثبت تغییرات
+                </button>
               </div>
             </div>
           </div>
