@@ -127,7 +127,7 @@ const Users = () => {
       <div className="pt-5 w-full">
         <div className="w-full h-[90%]">
           <div className="w-full h-12 bg-gradient-to-r from-blue-300 to-blue-600 rounded-t-2xl p-2 pr-4 text-white diodfont-semibold text-ld">کاربران</div>
-          <div className="w-full h-[90%] bg-white  rounded-b-2xl overflow-scroll">
+          <div className="w-full h-[90%] bg-white  rounded-b-2xl overflow-auto">
             <Grid columns={columns} data={data} />
           </div>
         </div>
