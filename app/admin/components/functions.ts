@@ -13,3 +13,20 @@ export const swalMessage = (title: string, message: string, icon: 'success' | 'e
         icon: icon
     });
 }
+
+export const getToken = async () => {
+    const token = await httpService.post(
+        "/auth/login",
+        {
+            "username": "info@neuronplus.ir",
+            "password": "123456"
+        }
+    ).then((res) => {
+        return res.data;
+    }).catch((err)=>{
+        return err;
+    });
+
+    return token;
+}
+
