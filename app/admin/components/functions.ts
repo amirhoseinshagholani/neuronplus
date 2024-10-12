@@ -1,9 +1,11 @@
 
 import axios from "axios";
+// import { redirect } from "next/dist/server/api-utils";
 import Swal from 'sweetalert2';
+import redirect from 'next/navigation'
 
 export const httpService = axios.create({
-    baseURL: "http://localhost:3000/neuronplus/api"
+    baseURL: "http://localhost:8000/neuronplus/api"
 });
 
 export const swalMessage = (title: string, message: string, icon: 'success' | 'error' | 'warning' | 'info' | 'question') => {
@@ -14,12 +16,13 @@ export const swalMessage = (title: string, message: string, icon: 'success' | 'e
     });
 }
 
-export const getToken = async () => {
+export const getToken = async (mellicode:string,password:string) => {
+    
     const token = await httpService.post(
         "/auth/login",
         {
-            "username": "info@neuronplus.ir",
-            "password": "123456"
+            "mellicode": mellicode,
+            "password": password
         }
     ).then((res) => {
         return res.data;
@@ -29,4 +32,3 @@ export const getToken = async () => {
 
     return token;
 }
-

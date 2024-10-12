@@ -173,7 +173,7 @@ const RoleAddForm = () => {
         </div>
 
         <div className="col-span-6 pr-10 pl-5">
-          <div className="diodfont-semibold text-md mb-2">نقش ها</div>
+          <div className="diodfont-semibold text-md mb-3">نقش ها</div>
           {/* {
               roles && (
               )
