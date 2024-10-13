@@ -16,13 +16,13 @@ export const swalMessage = (title: string, message: string, icon: 'success' | 'e
     });
 }
 
-export const getToken = async (mellicode:string,password:string) => {
+export const getToken = async (mellicode:string='4311409338',password:string='123456') => {
     
     const token = await httpService.post(
         "/auth/login",
         {
             "mellicode": mellicode,
-            "password": password
+            "password": password 
         }
     ).then((res) => {
         return res.data;

@@ -1,3 +1,4 @@
+'use client';
 
 import "../globals.css";
 import "@/public/css/font.css"
@@ -6,8 +7,18 @@ import Footer from "./components/footer";
 import logo from "@/public/img/neuron+.png"
 import Sidebar from "./components/sidebar";
 import Main from "./components/main";
+import {useCookies} from "react-cookie";
+import { swalMessage } from "./components/functions";
+import { useRouter } from "next/navigation";
 
 const RootLayout = ({children}:any) => {
+  const [cookies,setCookie,removeCookie] = useCookies(['token']);
+  
+  const router = useRouter();
+  if(!cookies.token){
+    router.push('/auth/login');
+  }
+  
   return(
     <>
     <html lang="fa" dir="rtl">
