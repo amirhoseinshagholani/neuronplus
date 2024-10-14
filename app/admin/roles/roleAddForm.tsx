@@ -20,7 +20,7 @@ const RoleAddForm = () => {
   const getRoles = async () => {
     try {
       const token = await getToken();
-      const currentToken = "Bearer " + token.token;
+      const currentToken = "Bearer " + token.data.token;
       const responseGetAllRoles = await httpService.get("/roles/get/all", {
         headers: {
           Authorization: currentToken,

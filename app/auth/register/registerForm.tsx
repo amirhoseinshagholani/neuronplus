@@ -1,5 +1,5 @@
 "use client";
-import { getToken, swalMessage } from "@/app/admin/components/functions";
+import { getToken, httpService, swalMessage } from "@/app/admin/components/functions";
 import FalseSvg from "@/public/svg/components/false";
 import { useForm } from "react-hook-form";
 import {useRouter} from "next/navigation";
@@ -14,27 +14,40 @@ const RegisterForm = () => {
   const router = useRouter();
 
   const submitForm = async (data: any) => {
-    const token = await getToken();
-    const user = {
-        "role_id":"22",
-        "firstName":data.firstName,
-        "lastName":data.lastName,
-        "mobile":data.mobile,
-        "phone":data.phone,
-        "melliCode":data.melliCode,
-        "status":"1",
-        "state":data.state,
-        "city":data.city,
-        "address":data.address,
-        "password":data.password,
-        "description":"",
-        "refer_to":"0"
-    }
-    console.log(user);
-    // console.log(token);
+    // const user = {
+    //     "firstName":data.firstName,
+    //     "lastName":data.lastName,
+    //     "mobile":data.mobile,
+    //     "phone":data.phone,
+    //     "melliCode":data.melliCode,
+    //     "state":data.state,
+    //     "city":data.city,
+    //     "address":data.address,
+    //     "password":data.password,
+    //     "description":"",
+    // }
+// console.log(user);
 
-    swalMessage("تبریک میگم!", "ثبت نام با موفقیت انجام شد", "success");
-    // router.push('/auth/login');
+    try{
+      const response = await httpService.post('/users/addSelf',{
+        firstName:data.firstName,
+        lastName:data.lastName,
+        mobile:data.mobile,
+        phone:data.phone,
+        melliCode:data.melliCode,
+        state:data.state,
+        city:data.city,
+        address:data.address,
+        password:data.password,
+        description:"",
+      });
+      swalMessage("تبریک میگم!", "ثبت نام با موفقیت انجام شد", "success");
+      console.log(response.data);
+      router.push('/auth/login');
+    }catch(err){
+      swalMessage("خطا", "متاسفانه ثبت نام با مشکل مواجه شده است، لطفا دوباره امتحان کنید", "error");
+      return false;
+    }
   };
 
   return (

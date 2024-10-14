@@ -31,8 +31,8 @@ const LoginForm = () => {
     try {
       const user:any = await getToken(mellicode, password);
 
-      if (user.token) {
-        setCookie("token", user.token, { path: "/admin", maxAge: 60 * 60 });
+      if (user.data.token) {
+        setCookie("token", user.data.token, { path: "/admin", maxAge: 60 * 60 });
         if(remember){
           // if(!cookies.mellicode){
             const oneMonthFromNow = new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000);
