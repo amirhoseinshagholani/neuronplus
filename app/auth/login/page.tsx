@@ -1,6 +1,27 @@
+'use client';
+
+import { cookies } from "next/headers";
 import LoginForm from "./loginForm";
+import { useCookies } from "react-cookie";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Login = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(['token','mellicode','password']);
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (cookies.token) {
+      router.push("/admin");
+    } else {
+      setIsLoading(false);
+    }
+  }, [cookies, router]);
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <>

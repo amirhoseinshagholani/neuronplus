@@ -1,6 +1,46 @@
-'use client';
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
+import { httpService, swalMessage } from "./components/functions";
+import { headers } from "next/headers";
+import useGregorianToJalali from "../hooks/useGregorianToJalali";
 
 const HomePage = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(["token", "mellicode", "password"]);
+  const [user, setUser] = useState<any>();
+  const createdDateUser = useGregorianToJalali(user ? user.created_at : '');
+
+  const getUser = async () => {
+    try {
+
+      const response_user = await httpService.get(
+        "/users/getUser",
+        {
+          params: {
+            item: "mellicode",
+            itemValue: cookies.mellicode
+          },
+          headers: {
+            Authorization: "Bearer " + cookies.token,
+          },
+        }
+      );
+      setUser(response_user.data.data[0]);
+      const createddate = response_user.data.data[0].created_at;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    getUser();
+  }, [cookies.mellicode]);
+
+
+
+
   return (
     <>
       <div className="w-full pt-5 flex h-[90%]">
@@ -14,56 +54,42 @@ const HomePage = () => {
                 <div className="diodfont-semibold text-md p-1 pb-2">
                   نام و نام خانوادگی:
                 </div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  محدثه شاقلانی
-                </div>
+                <input className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl" type="text" value={user ? user.firstName + ' ' + user.lastName : ''} />
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">سمت:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  مدیرعامل
-                </div>
+                <input className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl" type="text" value={user ? user.role_title : ''} />
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">کدملی:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  4311409338
-                </div>
+                <input className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl" type="text" value={user ? user.melliCode : ''} />
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
-                <div className="diodfont-semibold text-md p-1 pb-2">شماره تلفن:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  09011813758
+                <div className="diodfont-semibold text-md p-1 pb-2">
+                  شماره تلفن:
                 </div>
+                <input className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl" type="text" value={user ? user.phone : "-"} />
               </div>
             </div>
 
             <div className="w-1/2">
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">استان:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  تهران
-                </div>
+                <input className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl" type="text" value={user ? user.state : ''} />
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">شهر:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  تهران
-                </div>
+                <input className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl" type="text" value={user ? user.city : ''} />
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md p-1 pb-2">آدرس:</div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  نارمک، خیابان رودباری، پلاک370
-                </div>
+                <input className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl" type="text" value={user ? user.address : ''} />
               </div>
               <div className="flex gap-2 text-sm p-2 justify-between mt-3">
                 <div className="diodfont-semibold text-md  p-1 pb-2">
                   تاریخ شروع همکاری:
                 </div>
-                <div className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl">
-                  1403-06-02
-                </div>
+                <input className="diodfont-semibold text-md text-slate-500 shadow-md bg-blue-100 p-1 pr-2 pb-2 w-2/3 rounded-xl" type="text" value={createdDateUser ? createdDateUser : ''} />
               </div>
             </div>
           </div>

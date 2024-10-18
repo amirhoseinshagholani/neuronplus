@@ -7,7 +7,7 @@ const Header = () => {
   const router = useRouter();
 
   const exit = ()=>{
-    removeCookie('token');
+    removeCookie('token',{path:"/"});
     router.push('/auth/login');
   }
 

@@ -14,6 +14,10 @@ const LoginForm = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['token','mellicode','password']);
   const router = useRouter();
 
+  // if(cookies.token){
+  //   router.push('/admin');
+  // }
+
   const submitForm = async (data: any) => {
     const mellicode = data["mellicode"];
     const password = data["password"];
@@ -32,12 +36,12 @@ const LoginForm = () => {
       const user:any = await getToken(mellicode, password);
 
       if (user.data.token) {
-        setCookie("token", user.data.token, { path: "/admin", maxAge: 60 * 60 });
+        setCookie("token", user.data.token, { path: "/", maxAge: 60 * 60 });
         if(remember){
           // if(!cookies.mellicode){
             const oneMonthFromNow = new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000);
-            setCookie('mellicode',mellicode,{path:"/auth/login",expires:oneMonthFromNow});
-            setCookie('password',password,{path:"/auth/login",expires:oneMonthFromNow});
+            setCookie('mellicode',mellicode,{path:"/",expires:oneMonthFromNow});
+            setCookie('password',password,{path:"/auth",expires:oneMonthFromNow});
           // }
         }
         router.push("/admin");
