@@ -174,12 +174,6 @@ const RoleAddForm = () => {
 
         <div className="col-span-6 pr-10 pl-5">
           <div className="diodfont-semibold text-md mb-3">نقش ها</div>
-          {/* {
-              roles && (
-              )
-            } */}
-          {/* <div className="h-[80%] p-2 rounded-lg bg-slate-700 overflow-auto"> */}
-
           {roles ? (
             <div className="h-[80%] p-2 rounded-lg bg-slate-600 overflow-auto">
               {roles.map((role) => (
@@ -212,6 +206,7 @@ const RoleAddForm = () => {
             </div>
           )}
         </div>
+        
       </div>
       {/* </div> */}
     </>
