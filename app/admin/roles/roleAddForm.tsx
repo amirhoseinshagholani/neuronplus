@@ -5,28 +5,33 @@ import { getToken, httpService, swalMessage } from "../components/functions";
 import { log } from "node:console";
 import TrueSvg from "@/public/svg/components/true";
 import EditSvg from "@/public/svg/components/editSvg";
+import { useCookies } from "react-cookie";
 
 const RoleAddForm = () => {
   interface Role {
     id: number;
     title: string;
+    status: string;
     description: string;
   }
+
+  const [cookies, setCookie, removeCookie] = useCookies(["token", "mellicode", "password"]);
   const { register, handleSubmit } = useForm();
+
   const [titleValue, setTitleValue] = useState("");
+  const [statusValue, setStatusValue] = useState("1");
+  const [typeValue, setTypeValue] = useState("1");
   const [descriptionValue, setDescriptionValue] = useState("");
+
   const [roles, setRoles] = useState<Role[] | null>(null);
 
   const getRoles = async () => {
     try {
-      const token = await getToken();
-      const currentToken = "Bearer " + token.data.token;
       const responseGetAllRoles = await httpService.get("/roles/get/all", {
         headers: {
-          Authorization: currentToken,
+          Authorization: "Bearer " + cookies.token,
         },
       });
-      // console.log(responseGetAllRoles.data.data.length);
       if (responseGetAllRoles.data.data.length != 0) {
         setRoles(responseGetAllRoles.data["data"]);
       }
@@ -40,20 +45,15 @@ const RoleAddForm = () => {
   }, []);
 
   const submitForm = async (data: any) => {
-    var title = data["title"];
-    const status = data["status"];
-    const type = data["type"];
-    const description = data["description"];
 
-    if (!title) {
+    if (!titleValue) {
       swalMessage("خطا!", "عنوان نقش را وارد کنید", "warning");
       return false;
     }
 
-    const token = await getToken();
-    const currentToken = "Bearer " + token.token;
+    const token = "Bearer " + cookies.token;
 
-    if (!token.success) {
+    if (!token) {
       swalMessage("خطا!", "مشکلی پیش آمده است، لطفا بعدا امتحان کنید", "error");
       return false;
     }
@@ -62,22 +62,23 @@ const RoleAddForm = () => {
       const responseAddRole = await httpService.post(
         "/roles/add",
         {
-          title: title,
-          status: status,
-          type: type,
-          description: description,
+          title: titleValue,
+          status: statusValue,
+          type: typeValue,
+          description: descriptionValue,
         },
         {
           headers: {
-            Authorization: currentToken,
+            Authorization: token,
           },
         }
       );
 
       if (responseAddRole.data.success) {
         swalMessage("تبریک میگم!", "نقش مورد نظر با موفقیت ثبت شد", "success");
-        title = "";
         setTitleValue("");
+        setStatusValue("1");
+        setTypeValue("1");
         setDescriptionValue("");
         getRoles();
       } else {
@@ -125,6 +126,10 @@ const RoleAddForm = () => {
                 className="diodfont-semibold text-sm shadow-md bg-blue-200 w-full max-w-xs h-9 pr-2 pb-2 rounded-xl"
                 name="status"
                 id="status"
+                onChange={(e) => {
+                  setStatusValue(e.target.value)
+                }}
+                value={statusValue}
               >
                 <option value="1">فعال</option>
                 <option value="0">غیرفعال</option>
@@ -140,6 +145,10 @@ const RoleAddForm = () => {
                 className="diodfont-semibold text-sm shadow-md bg-blue-200 w-full max-w-xs h-9 pr-2 pb-2 rounded-xl"
                 name="status"
                 id="status"
+                onChange={(e) => {
+                  setTypeValue(e.target.value)
+                }}
+                value={typeValue}
               >
                 <option value="1">کارمند</option>
                 <option value="0">دانش آموز</option>
@@ -175,7 +184,7 @@ const RoleAddForm = () => {
         <div className="col-span-6 pr-10 pl-5">
           <div className="diodfont-semibold text-md mb-3">نقش ها</div>
           {roles ? (
-            <div className="h-[80%] p-2 rounded-lg bg-slate-600 overflow-auto">
+            <div className="h-2/3 p-2 rounded-lg bg-slate-600 overflow-auto">
               {roles.map((role) => (
                 <div key={role.id} className="w-full p-1">
                   <div className="text-gray-800 p-2 text-xs diodfont-semibold bg-gradient-to-r from-purple-300 to-purple-400 shadow-md h-10 w-full rounded-lg">
@@ -183,8 +192,10 @@ const RoleAddForm = () => {
                       <span className="flex-shrink-0 overflow-hidden text-ellipsis w-24 whitespace-nowrap">
                         {role.title}
                       </span>
-                      <span className="flex-1">
-                        <TrueSvg />
+                      <span className="flex-1 mr-7">
+                        {
+                          role.status === "1" ? <span>فعال</span> : <span>غیرفعال</span>
+                        }
                       </span>
                       <span className="flex-shrink-0 overflow-hidden text-ellipsis w-24 whitespace-nowrap">
                         {role.description}
@@ -206,7 +217,7 @@ const RoleAddForm = () => {
             </div>
           )}
         </div>
-        
+
       </div>
       {/* </div> */}
     </>
