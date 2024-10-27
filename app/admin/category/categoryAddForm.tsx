@@ -22,16 +22,17 @@ const CategoryAddForm = () => {
     }
 
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
-    const { register, handleSubmit, watch } = useForm();
+    const { register, handleSubmit } = useForm();
     const [titleValue, setTitleValue] = useState("");
-    const [statusValue, setStatusValue] = useState("1");
+    const [slugValue,setSlugValue] = useState("");
+    const [statusValue, setStatusValue] = useState("0");
     const [descriptionValue, setDescriptionValue] = useState("");
 
     const [categories, setCategories] = useState<Categories[] | null>(null);
 
-    const file = watch('cover');
+    // const file = watch('cover');
 
-    const [selectedFile, setSelectedFile] = useState<string | null>(null);
+    const [cover, setCover] = useState<string | null>(null);
     const [uploadStatus, setUploadStatus] = useState<string>('');
 
     const fileInputRef = useRef<HTMLInputElement | null>(null);  // ba ref mitavan mostaghim be item dastresi dasht
@@ -63,7 +64,7 @@ const CategoryAddForm = () => {
             swalMessage("خطا", "عنوان دسته را وارد کنید", "warning");
             return false;
         }
-        if (!selectedFile) {
+        if (!cover) {
             setUploadStatus('No file selected');
             return false;
         }
@@ -80,8 +81,9 @@ const CategoryAddForm = () => {
                 "/categories/add",
                 {
                     title: titleValue,
+                    slug: slugValue,
                     status: statusValue,
-                    cover: selectedFile,
+                    cover: cover,
                     description: descriptionValue,
                 },
                 {
@@ -93,7 +95,8 @@ const CategoryAddForm = () => {
 
             if (true) {
                 setTitleValue("");
-                setSelectedFile("");
+                setSlugValue("");
+                setCover("");
                 setDescriptionValue("");
 
                 swalMessage("تبریک میگم!", "دسته بندی مورد نظر با موفقیت ثبت شد", "success");
@@ -137,6 +140,20 @@ const CategoryAddForm = () => {
                     </div>
 
                     <div className="flex mt-2 gap-2 items-center justify-between">
+                        <label className="diodfont-semibold text-md" htmlFor="title">نامک : </label>
+                        <input {...register('slug')}
+                            className="diodfont-semibold text-sm shadow-md bg-blue-200 w-full max-w-xs h-9 p-1 pr-2 pb-2 rounded-xl"
+                            type="text"
+                            name="slug"
+                            id="slug"
+                            onChange={(e) => {
+                                setSlugValue(e.target.value);
+                            }}
+                            value={slugValue}
+                        />
+                    </div>
+
+                    <div className="flex mt-2 gap-2 items-center justify-between">
                         <label className="diodfont-semibold text-md" htmlFor="status">وضعیت : </label>
                         <select {...register('status')}
                             className="diodfont-semibold text-sm shadow-md bg-blue-200 w-full max-w-xs h-9 pr-2 pb-2 rounded-xl"
@@ -147,8 +164,8 @@ const CategoryAddForm = () => {
                             }}
                             value={statusValue}
                         >
-                            <option selected value="1">فعال</option>
-                            <option value="0">غیرفعال</option>
+                            <option value="1">فعال</option>
+                            <option selected value="0">غیرفعال</option>
                         </select>
                     </div>
 
@@ -157,7 +174,7 @@ const CategoryAddForm = () => {
                         <div className="w-full max-w-xs justify-between gap-2 flex">
                             <input
                                 ref={fileInputRef}
-                                className="mt-2"
+                                className="diodfont-semibold w-60 text-sm shadow-md bg-blue-200 h-9 p-1 pr-2 pb-2 rounded-xl"
                                 type="file"
                                 name="file"
                                 onChange={async (e) => {
@@ -177,7 +194,7 @@ const CategoryAddForm = () => {
                                         const file_path = result.filePath;
                                         const temp_path = file_path.split("/");
 
-                                        setSelectedFile('/api/files/' + temp_path[2]);
+                                        setCover('/api/files/' + temp_path[2]);
                                     }
                                 }}
 
@@ -185,7 +202,7 @@ const CategoryAddForm = () => {
                             <div className="justify-end w-1/2 h-1/2">
                                 <Image
                                     className="rounded-xl"
-                                    src={selectedFile ? selectedFile : "/img/images.jpg"}
+                                    src={cover ? cover : "/img/images.jpg"}
                                     alt="Uploaded Image"
                                     width={500}
                                     height={500}
